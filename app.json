@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "StadABApp",
+    "slug": "StadABApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "StadABApp"
+}
