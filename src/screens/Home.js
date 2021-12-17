@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, View, } from 'react-native';
+import {ImageBackground, StyleSheet, View, Text} from 'react-native';
 ;
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
       <View style={styles.component}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
             
-            
+            <Text style={styles.title} >STÄDA FINT</Text>
              </ImageBackground>
 
       </View>
@@ -28,6 +28,16 @@ const App = () => {
         justifyContent: "center",
         width: 385
       },
+      title: {
+        marginTop: 60,
+        marginBottom: 30,
+        padding: 8,   
+        backgroundColor: "#000000c0",
+        color: "whitesmoke",
+        textAlign: "center",
+        fontSize: 30,
+        fontWeight: "bold",
+    },
   });
   
   export default App;
