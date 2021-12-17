@@ -12,10 +12,10 @@ const App = () => {
           <Picker
             selectedValue={product}
             onValueChange={currentProduct => setProduct(currentProduct)}>
-            <Picker.Item label="Base" value="Basicstädning" />
+            <Picker.Item label="Basic" value="Basicstädning" />
             <Picker.Item label="Topp" value="Toppstädning" />
-            <Picker.Item label="Diam" value="Diamantstädning" />
-            <Picker.Item label="Föns" value="Fönsterputsning" />
+            <Picker.Item label="Diamant" value="Diamantstädning" />
+            <Picker.Item label="Fönsterputs" value="Fönsterputsning" />
           </Picker>
           <Text>
             Selected: {product}
@@ -23,7 +23,7 @@ const App = () => {
           <Picker
             selectedValue={pay}
             onValueChange={currentPay=> setPay(currentPay)}>
-            <Picker.Item label="Fakt" value="Basicstädning" />
+            <Picker.Item label="Faktura" value="Basicstädning" />
             <Picker.Item label="Swish" value="Toppstädning" />
             <Picker.Item label="Kort" value="Diamantstädning" />
           </Picker>
