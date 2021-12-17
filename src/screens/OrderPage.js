@@ -7,9 +7,9 @@ const App = () => {
     const [pay, setPay] = useState("Faktura");
     return (
       <View style={styles.component}>
-        <Text > Välj en städning </Text>
+        <Text style={styles.orderTitle}> Välj en städning </Text>
         <View>
-          <Picker
+          <Picker style={styles.orderPicker}
             selectedValue={product}
             onValueChange={currentProduct => setProduct(currentProduct)}>
             <Picker.Item label="Basic" value="Basicstädning" />
@@ -23,14 +23,20 @@ const App = () => {
           <Picker
             selectedValue={pay}
             onValueChange={currentPay=> setPay(currentPay)}>
-            <Picker.Item label="Faktura" value="Basicstädning" />
-            <Picker.Item label="Swish" value="Toppstädning" />
-            <Picker.Item label="Kort" value="Diamantstädning" />
+            <Picker.Item label="Faktura" value="Faktura" />
+            <Picker.Item label="Swish" value="Swish" />
+            <Picker.Item label="Kort" value="Kort" />
           </Picker>
           <Text>
             Selected: {pay}
           </Text>
         </View>
+        <Button style={styles.orderButton}
+          onPress={console.log("test")}
+          title="Köp"
+          accessibilityLabel="Learn more about this purple button"
+        />
+        
       </View>
     );
   };
@@ -40,6 +46,23 @@ const App = () => {
         justifyContent: 'center',
         color: "whitesmoke",
         alignItems: 'center',
+      },
+      orderTitle: {
+        marginTop: 60,
+          marginBottom: 30,
+          padding: 8,   
+          backgroundColor: "#000000c0",
+          color: "whitesmoke",
+          textAlign: "center",
+          fontSize: 30,
+          fontWeight: "bold",
+      },
+      orderPicker: {
+
+      },
+      orderButton: {
+        backgroundColor:"#000000c0",
+
       },
   });
   

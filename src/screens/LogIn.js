@@ -6,7 +6,7 @@ const App = () => {
     const [roll, setRoll] = useState('Kund');
     return (
       <View style={styles.component}>
-        <Text > Inloggningsportal </Text>
+        <Text style={styles.loginTitle} > Inloggningsportal </Text>
         <View>
           <TextInput 
             placeholder="Email" />
@@ -17,9 +17,9 @@ const App = () => {
           <Picker
             selectedValue={roll}
             onValueChange={currentCurrency => setRoll(currentCurrency)}>
-            <Picker.Item label="MED" value="Medarbetare" />
-            <Picker.Item label="KUN" value="Kund" />
-            <Picker.Item label="ADM" value="Administratör" />
+            <Picker.Item label="STÄDARE" value="Medarbetare" />
+            <Picker.Item label="KUND" value="Kund" />
+            <Picker.Item label="ADMIN" value="Administratör" />
           </Picker>
           <Text>
             Selected: {roll}
@@ -35,6 +35,16 @@ const App = () => {
       color: "whitesmoke",
       alignItems: 'center',
     },
+    loginTitle: {
+      marginTop: 60,
+        marginBottom: 30,
+        padding: 8,   
+        backgroundColor: "#000000c0",
+        color: "whitesmoke",
+        textAlign: "center",
+        fontSize: 30,
+        fontWeight: "bold",
+    }
   });
   
   export default App;
