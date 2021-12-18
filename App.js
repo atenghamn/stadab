@@ -1,5 +1,6 @@
 import Login from './src/screens/LogIn';
 import OrderPage from './src/screens/OrderPage';
+import About from './src/screens/About';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,7 +14,8 @@ export const AppNavigator = () => (
   <Stack.Navigator>
     <Stack.Screen name="Hem" component={Home} />
     <Stack.Screen name="Mina Sidor" component={Login} />
-    <Stack.Screen name="Beställ" component={OrderPage} />
+    <Stack.Screen name="Beställ" component={OrderPage}  />
+    <Stack.Screen name="Om Oss" component={About} />
   </Stack.Navigator>
 ) 
 
