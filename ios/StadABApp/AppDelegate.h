@@ -5,5 +5,4 @@
 #import <Expo/Expo.h>
 
 @interface AppDelegate : EXAppDelegateWrapper <RCTBridgeDelegate>
-
 @end
