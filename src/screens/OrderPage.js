@@ -45,6 +45,7 @@ const App = () => {
         flex: 1, 
         justifyContent: 'center',
         color: "whitesmoke",
+        backgroundColor: '#82C7C1', 
         alignItems: 'center',
       },
       orderTitle: {

@@ -8,10 +8,12 @@ Nothing to be taken serously! Just a simple test to create an app for a fictive 
 
 ## TODO 
 
-- [ ] Make an aboutpage
+- [x] Make an aboutpage
 - [ ] Collect the data in a database
+- [ ] Create an 'new user' button 
 - [x] Make a form to order a job with a rolling picker 
 - [x] Build a startpage 
 - [ ] Add icons 
 - [x] Implement some kind of navigation controll
+- [ ] Make some kind of styling
 

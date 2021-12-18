@@ -8,12 +8,12 @@ const App = () => {
 
     return (
         <View style={styles.component}>
-            <Text styles={styles.aboutTitle}>Om Oss</Text>
+            <Text style={styles.aboutTitle}>Om Oss</Text>
             <Image 
             style={styles.teamImages}
             source={teamImage}
             />
-            <Text> 
+            <Text style={styles.aboutText}> 
             Städa Fint är ett familjeägt företag som i dagsläget har 19 anställda och omsätter 30 miljoner.
             Vi erbjuder en rad olika tjänster inom städ och lokalvård, både till privata kunder, företag och offentlig sektor.
             </Text>
@@ -29,6 +29,8 @@ const App = () => {
           justifyContent: 'center',
           color: "whitesmoke",
           alignItems: 'center',
+          backgroundColor: '#82C7C1', 
+
         },
         teamImages: {
             flex: 1,
@@ -45,6 +47,13 @@ const App = () => {
             fontSize: 30,
             fontWeight: "bold",
         },
+        aboutText: {
+            marginTop: 60,
+            marginBottom: 30,
+            padding: 8,   
+            color: "whitesmoke",
+            textAlign: "center",
+        }
       });
 
 export default App;

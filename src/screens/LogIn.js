@@ -34,6 +34,7 @@ const App = () => {
       justifyContent: 'center',
       color: "whitesmoke",
       alignItems: 'center',
+      backgroundColor: '#82C7C1', 
     },
     loginTitle: {
       marginTop: 60,

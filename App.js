@@ -11,7 +11,7 @@ import Home from './src/screens/Home';
 const Stack = createBottomTabNavigator();
 
 export const AppNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator >
     <Stack.Screen name="Hem" component={Home} />
     <Stack.Screen name="Mina Sidor" component={Login} />
     <Stack.Screen name="Beställ" component={OrderPage}  />
@@ -22,12 +22,14 @@ export const AppNavigator = () => (
 export default function App() {
   return (
     <NavigationContainer>
-      <AppNavigator />
+      <AppNavigator style={styles.nav} />
     </NavigationContainer>
      
   );
 }
 
 const styles = StyleSheet.create({
-
+  nav: {
+    backgroundColor: '#FAAF3C',
+  }
 });
