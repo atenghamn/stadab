@@ -15,5 +15,5 @@ Nothing to be taken serously! Just a simple test to create an app for a fictive 
 - [x] Build a startpage 
 - [ ] Add icons 
 - [x] Implement some kind of navigation controll
-- [ ] Make some kind of styling
+- [x] Make some kind of styling
 

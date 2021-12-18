@@ -17,17 +17,18 @@ const App = () => {
             <Picker.Item label="Diamant" value="Diamantstädning" />
             <Picker.Item label="Fönsterputs" value="Fönsterputsning" />
           </Picker>
-          <Text>
+          <Text style={styles.orderDisplayText}>
             Selected: {product}
           </Text>
           <Picker
+            style={styles.orderPicker}
             selectedValue={pay}
             onValueChange={currentPay=> setPay(currentPay)}>
             <Picker.Item label="Faktura" value="Faktura" />
             <Picker.Item label="Swish" value="Swish" />
             <Picker.Item label="Kort" value="Kort" />
           </Picker>
-          <Text>
+          <Text style={styles.orderDisplayText}>
             Selected: {pay}
           </Text>
         </View>
@@ -59,7 +60,17 @@ const App = () => {
           fontWeight: "bold",
       },
       orderPicker: {
-
+          backgroundColor: '#FAAF3C',
+          color: 'whitesmoke',
+          margin: 4, 
+          width: 200,
+      },
+      orderDisplayText: {
+        color: '#FAAF3C',
+        backgroundColor: 'whitesmoke',
+        margin: 4, 
+        width: 200,
+        textAlign: "center",
       },
       orderButton: {
         backgroundColor:"#000000c0",

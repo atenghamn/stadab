@@ -9,19 +9,24 @@ const App = () => {
         <Text style={styles.loginTitle} > Inloggningsportal </Text>
         <View>
           <TextInput 
-            placeholder="Email" />
+            placeholder="Email" 
+            style ={styles.loginPicker}/>
+            
           <TextInput
             secureTextEntry={true}
             placeholder="Password"
+            style ={styles.loginPicker}
           />
           <Picker
             selectedValue={roll}
-            onValueChange={currentCurrency => setRoll(currentCurrency)}>
+            onValueChange={currentCurrency => setRoll(currentCurrency)}
+            style ={styles.loginPicker}
+            >
             <Picker.Item label="STÄDARE" value="Medarbetare" />
             <Picker.Item label="KUND" value="Kund" />
             <Picker.Item label="ADMIN" value="Administratör" />
           </Picker>
-          <Text>
+          <Text style={styles.loginPicker}>
             Selected: {roll}
           </Text>
         </View>
@@ -45,6 +50,14 @@ const App = () => {
         textAlign: "center",
         fontSize: 30,
         fontWeight: "bold",
+    },
+    loginPicker: {
+      backgroundColor: '#FAAF3C',
+      color: 'whitesmoke',
+      margin: 4, 
+      width: 200,
+      textAlign: "center",
+      
     }
   });
   
