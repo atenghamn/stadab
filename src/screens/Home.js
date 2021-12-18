@@ -1,14 +1,13 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View, Text} from 'react-native';
-;
+import backgroundImage from '../img/jan-kopriva-77La8Of1F9g-unsplash.jpg'
 
 const App = () => {
     
-    const image = {uri: "https://images.unsplash.com/photo-1584792286782-a5dc95dc2250?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"};
 
     return (
       <View style={styles.component}>
-            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+            <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.image}>
             
             <Text style={styles.title} >STÄDA FINT</Text>
              </ImageBackground>

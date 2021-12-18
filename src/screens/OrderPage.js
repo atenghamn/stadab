@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {Text, StyleSheet, View, TextInput, Button } from 'react-native';
+import {Text, StyleSheet, View, TextInput, Button, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import reactDom from 'react-dom';
 
 const App = () => {
     const [product, setProduct] = useState('Basstäd');
@@ -32,11 +33,13 @@ const App = () => {
             Selected: {pay}
           </Text>
         </View>
-        <Button style={styles.orderButton}
-          onPress={console.log("test")}
+        <Pressable style={styles.orderButton}
+          onPress={console.log("Användaren valde " + product.toLowerCase() + " och vill betala med " + pay.toLowerCase())}
           title="Köp"
           accessibilityLabel="Learn more about this purple button"
-        />
+        >
+          <Text style={styles.orderButtonText}>Köp</Text>
+        </Pressable>
         
       </View>
     );
@@ -73,9 +76,15 @@ const App = () => {
         textAlign: "center",
       },
       orderButton: {
-        backgroundColor:"#000000c0",
-
+        backgroundColor:"#7FAED4",
+        width: 100,
       },
+      orderButtonText: {
+        color: 'whitesmoke',
+        textAlign: 'center',
+        padding: 4,
+        margin: 4,
+      }
   });
   
   export default App;
