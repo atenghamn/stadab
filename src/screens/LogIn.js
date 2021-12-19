@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
-import {Text, StyleSheet, View, TextInput, Button } from 'react-native';
+import {Text, StyleSheet, View, TextInput, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 const App = () => {
     const [roll, setRoll] = useState('Kund');
     return (
       <View style={styles.component}>
-        <Text style={styles.loginTitle} > Inloggningsportal </Text>
+        <Text style={styles.loginTitle} > Mina Sidor </Text>
         <View>
           <TextInput 
-            placeholder="Email" 
+            placeholder="Epost" 
             style ={styles.loginPicker}/>
             
           <TextInput
             secureTextEntry={true}
-            placeholder="Password"
+            placeholder="Lösenord"
             style ={styles.loginPicker}
           />
           <Picker
@@ -26,9 +26,14 @@ const App = () => {
             <Picker.Item label="KUND" value="Kund" />
             <Picker.Item label="ADMIN" value="Administratör" />
           </Picker>
-          <Text style={styles.loginPicker}>
-            Selected: {roll}
-          </Text>
+        
+          <Pressable style={styles.loginButton}
+          onPress={console.log("Användaren vill logga in som " + roll.toLowerCase())}
+          title="LogIn"
+          accessibilityLabel="Learn more about this purple button"
+        >
+          <Text style={styles.loginButtonText}>Logga in som {roll.toLowerCase()}</Text>
+        </Pressable>
         </View>
       </View>
     );
@@ -57,7 +62,17 @@ const App = () => {
       margin: 4, 
       width: 200,
       textAlign: "center",
-      
+    },
+    loginButton: {
+      backgroundColor:"#7FAED4",
+      width: 100,
+      alignSelf: 'center',
+    },
+    loginButtonText: {
+      color: 'whitesmoke',
+      textAlign: 'center',
+      padding: 4,
+      margin: 4,
     }
   });
   
