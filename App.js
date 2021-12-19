@@ -6,21 +6,43 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Home from './src/screens/Home';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
  
-const Stack = createBottomTabNavigator();
+const Tab  = createBottomTabNavigator();
 
 export const AppNavigator = () => (
-  <Stack.Navigator style={styles.nav}
-   screenOptions={{ 
-    backgroundColor: '#FAAF3C',
-  }}
+  <Tab.Navigator 
+  screenOptions={({ route }) => ({
+    
+    tabBarIcon: ({ focused, color, size }) => {
+      let iconName;
+
+      if (route.name === 'Hem') {
+        iconName = focused
+          ? 'home'
+          : 'home-outline';
+      } else if (route.name === 'Mina Sidor') {
+        iconName = focused ? 'person' : 'person-outline';
+      } else if (route.name === 'Beställ') {
+        iconName = focused ? 'cart' : 'cart-outline';
+      } else if (route.name === 'Om Oss') {
+        iconName = focused ? 'people' : 'people-outline';
+      }
+
+      // You can return any component that you like here!
+      return <Ionicons name={iconName} size={size} color={color} />;
+    },
+    tabBarActiveTintColor: '#FAAF3C',
+    tabBarInactiveTintColor: 'gray',
+
+  })}
        >
-    <Stack.Screen name="Hem" component={Home} />
-    <Stack.Screen name="Mina Sidor" component={Login} />
-    <Stack.Screen name="Beställ" component={OrderPage} />
-    <Stack.Screen name="Om Oss" component={About} />
-  </Stack.Navigator>
+    <Tab.Screen name="Hem" component={Home} />
+    <Tab.Screen name="Mina Sidor" component={Login} />
+    <Tab.Screen name="Beställ" component={OrderPage} />
+    <Tab.Screen name="Om Oss" component={About} />
+  </Tab.Navigator>
 ) 
 
 export default function App() {

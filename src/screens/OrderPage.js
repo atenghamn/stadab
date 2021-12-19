@@ -19,7 +19,7 @@ const App = () => {
             <Picker.Item label="Fönsterputs" value="Fönsterputsning" />
           </Picker>
           <Text style={styles.orderDisplayText}>
-            Selected: {product}
+            Du har valt paketet: {product}
           </Text>
           <Picker
             style={styles.orderPicker}
@@ -30,7 +30,7 @@ const App = () => {
             <Picker.Item label="Kort" value="Kort" />
           </Picker>
           <Text style={styles.orderDisplayText}>
-            Selected: {pay}
+            Betalningsmetod: {pay}
           </Text>
         </View>
         <Pressable style={styles.orderButton}
