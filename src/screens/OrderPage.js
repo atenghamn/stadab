@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import {Text, StyleSheet, View, TextInput, Button, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import reactDom from 'react-dom';
+
+
 
 const App = () => {
     const [product, setProduct] = useState('Basstäd');
     const [pay, setPay] = useState("Faktura");
+    
     return (
       <View style={styles.component}>
         <Text style={styles.orderTitle}> Välj en städning </Text>
@@ -61,12 +63,14 @@ const App = () => {
           textAlign: "center",
           fontSize: 30,
           fontWeight: "bold",
+          borderRadius: 10,
       },
       orderPicker: {
           backgroundColor: '#FAAF3C',
           color: 'whitesmoke',
           margin: 4, 
           width: 200,
+          borderRadius: 10,
       },
       orderDisplayText: {
         color: '#FAAF3C',
@@ -74,10 +78,12 @@ const App = () => {
         margin: 4, 
         width: 200,
         textAlign: "center",
+        borderRadius: 10,
       },
       orderButton: {
         backgroundColor:"#7FAED4",
         width: 100,
+        borderRadius: 10,
       },
       orderButtonText: {
         color: 'whitesmoke',

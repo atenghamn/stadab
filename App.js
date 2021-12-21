@@ -6,7 +6,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Home from './src/screens/Home';
+import LoginScreen from './src/screens/LoginScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
  
 const Tab  = createBottomTabNavigator();
@@ -30,7 +32,6 @@ export const AppNavigator = () => (
         iconName = focused ? 'people' : 'people-outline';
       }
 
-      // You can return any component that you like here!
       return <Ionicons name={iconName} size={size} color={color} />;
     },
     tabBarActiveTintColor: '#FAAF3C',
@@ -39,7 +40,7 @@ export const AppNavigator = () => (
   })}
        >
     <Tab.Screen name="Hem" component={Home} />
-    <Tab.Screen name="Mina Sidor" component={Login} />
+    <Tab.Screen name="Mina Sidor" component={LoginScreen} />
     <Tab.Screen name="Beställ" component={OrderPage} />
     <Tab.Screen name="Om Oss" component={About} />
   </Tab.Navigator>
