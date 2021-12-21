@@ -9,11 +9,15 @@ Nothing to be taken serously! Just a simple test to create an app for a fictive 
 ## TODO 
 
 - [x] Make an aboutpage
-- [ ] Collect the data in a database
-- [ ] Create an 'new user' button 
+- [x] Set up database
+- [x] Create an 'new user' button 
+- [x] Log users to a database
+- [ ] Make working login button
+- [ ] Make working logout button
 - [x] Make a form to order a job with a rolling picker 
 - [x] Build a startpage 
 - [x] Add icons 
 - [x] Implement some kind of navigation controll
 - [x] Make some kind of styling
-
+- [ ] Log new bookings in database
+- [ ] Make an "Min sida" component

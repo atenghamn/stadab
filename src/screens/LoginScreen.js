@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import { NavigationContainer, useNavigation } from '@react-navigation/core';
+import React, { useEffect, useState } from 'react';
 import {KeyboardAvoidingView, StyleSheet, View, Text} from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { auth } from '../../firebase';
+import MyPage from "./MyPage";
 
 
 
@@ -10,17 +12,39 @@ const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const navigation = useNavigation();
+
+
+    useEffect(() => {
+       const unsubscribe = auth.onAuthStateChanged(user => {
+            if(user) {
+                navigation.navigate(MyPage)
+            }
+        })
+        return unsubscribe
+    }, [])
 
     const handleSignUp = () => {
         auth
         .createUserWithEmailAndPassword(email, password)
         .then(userCredentials => {
             const user = userCredentials.user;
-            console.log(user.email)
+            console.log("Registrerade: ", user.email)
         })
         .catch(error => alert(error.message))
         
     }
+
+    const handleLogin = () => {
+        auth
+        .signInWithEmailAndPassword(email, password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log("Loggade in med ", user.email);
+        })
+        .catch(error => alert(error.message))
+    }
+
 
     return (
         <KeyboardAvoidingView style={styles.component}
@@ -46,7 +70,7 @@ const LoginScreen = () => {
 
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
-                onPress={() => { }}
+                onPress={handleLogin}
                 style={styles.button}
                 >
                     <Text style={styles.button}>Logga in</Text>
