@@ -64,6 +64,8 @@ const App = () => {
           fontSize: 30,
           fontWeight: "bold",
           borderRadius: 10,
+          borderColor: '#FAAF3C',
+          borderWidth: 2,
       },
       orderPicker: {
           backgroundColor: '#FAAF3C',
@@ -79,6 +81,8 @@ const App = () => {
         width: 200,
         textAlign: "center",
         borderRadius: 10,
+        borderColor: '#FAAF3C',
+        borderWidth: 2,
       },
       orderButton: {
         backgroundColor:"#7FAED4",

@@ -1,6 +1,7 @@
-// Import the functions you need from the SDKs you need
 import * as firebase from "firebase";
-// TODO: Add SDKs for Firebase products that you want to use
+import { getDatabase } from "firebase/database";
+
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -10,7 +11,9 @@ const firebaseConfig = {
   projectId: "stadafintauth",
   storageBucket: "stadafintauth.appspot.com",
   messagingSenderId: "713343500892",
-  appId: "1:713343500892:web:c41ff1c7d26d40878f9c99"
+  appId: "1:713343500892:web:c41ff1c7d26d40878f9c99",
+  databaseURL: "https://stadafintauth-default-rtdb.europe-west1.firebasedatabase.app/",
+
 };
 
 // Initialize Firebase
@@ -23,5 +26,6 @@ if(firebase.apps.length === 0) {
 }
 
 const auth = firebase.auth();
+const database = getDatabase(app);
 
 export {auth}
