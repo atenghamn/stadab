@@ -1,16 +1,19 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, View, Text} from 'react-native';
+import {Image, StyleSheet, View, Text} from 'react-native';
 import backgroundImage from '../img/jan-kopriva-77La8Of1F9g-unsplash.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faBroom } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
     
 
     return (
       <View style={styles.component}>
-            <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.image}>
+        <Text style={styles.title} >STÄDA FINT</Text>
             
-            <Text style={styles.title} >STÄDA FINT</Text>
-             </ImageBackground>
+              
+             <FontAwesomeIcon icon={faBroom} size={250} color={'whitesmoke'}/>
+         
 
       </View>
     );
@@ -21,6 +24,7 @@ const App = () => {
       justifyContent: 'center',
       color: "whitesmoke",
       alignItems: 'center',
+      backgroundColor: '#82C7C1',
     },
     image: {
         flex: 1,
@@ -36,6 +40,9 @@ const App = () => {
         textAlign: "center",
         fontSize: 30,
         fontWeight: "bold",
+        borderRadius: 10,
+        borderColor: '#FAAF3C',
+        borderWidth: 2,
     },
   });
   

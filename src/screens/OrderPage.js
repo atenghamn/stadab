@@ -64,7 +64,7 @@ const App = () => {
           placeholder="Adress"
           value={adress}
           onChangeText={text => setAdress(text)}
-          style={styles.input}
+          style={styles.inputBottom}
           >
         </TextInput>
 
@@ -129,12 +129,26 @@ const App = () => {
         margin: 4,
       },
       input: {
-        backgroundColor: 'white',
+        backgroundColor: 'whitesmoke',
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 10,
         marginTop: 5,
+        width: 200,
+        borderColor: '#FAAF3C',
+        borderWidth: 2,
     },
+    inputBottom: {
+      backgroundColor: 'whitesmoke',
+      paddingHorizontal: 15,
+      paddingVertical: 10,
+      borderRadius: 10,
+      marginTop: 5,
+      marginBottom: 16,
+      width: 200,
+      borderColor: '#FAAF3C',
+      borderWidth: 2,
+  },
   });
   
   export default App;
