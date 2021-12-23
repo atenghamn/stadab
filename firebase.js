@@ -1,5 +1,4 @@
 import * as firebase from "firebase";
-import { getDatabase } from "firebase/database";
 
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -8,11 +7,11 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
   apiKey: "AIzaSyDeT9QkDhS8V9urksK7I2DULc--u4UVxDs",
   authDomain: "stadafintauth.firebaseapp.com",
+  databaseURL: "https://stadafintauth-default-rtdb.europe-west1.firebasedatabase.app",
   projectId: "stadafintauth",
   storageBucket: "stadafintauth.appspot.com",
   messagingSenderId: "713343500892",
-  appId: "1:713343500892:web:c41ff1c7d26d40878f9c99",
-  databaseURL: "https://stadafintauth-default-rtdb.europe-west1.firebasedatabase.app/",
+  appId: "1:713343500892:web:c41ff1c7d26d40878f9c99"
 
 };
 
@@ -26,6 +25,6 @@ if(firebase.apps.length === 0) {
 }
 
 const auth = firebase.auth();
-const database = getDatabase(app);
 
-export {auth}
+
+export {auth }

@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {Text, StyleSheet, View, TextInput, Button, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { getDatabase, ref, set } from "firebase/database";
+import firebase from 'firebase';
+
 
 
 
@@ -8,6 +11,17 @@ const App = () => {
     const [product, setProduct] = useState('Basstäd');
     const [pay, setPay] = useState("Faktura");
     
+
+    const createOrder = () => {
+      const orderRef = firebase.database().ref('Order');
+      const order = {
+        product, 
+        pay,
+      };
+      orderRef.push(order);
+    };
+
+
     return (
       <View style={styles.component}>
         <Text style={styles.orderTitle}> Välj en städning </Text>
@@ -36,7 +50,7 @@ const App = () => {
           </Text>
         </View>
         <Pressable style={styles.orderButton}
-          onPress={console.log("Användaren valde " + product.toLowerCase() + " och vill betala med " + pay.toLowerCase())}
+          onPress={createOrder}
           title="Köp"
           accessibilityLabel="Learn more about this purple button"
         >
