@@ -19,5 +19,7 @@ Nothing to be taken serously! Just a simple test to create an app for a fictive 
 - [x] Add icons 
 - [x] Implement some kind of navigation controll
 - [x] Make some kind of styling
-- [ ] Log new bookings in database
+- [x] Log new bookings in database
 - [x] Make an "Min sida" component
+- [x] Set name to order
+- [x] Set adress to order 

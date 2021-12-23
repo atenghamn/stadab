@@ -10,13 +10,17 @@ import firebase from 'firebase';
 const App = () => {
     const [product, setProduct] = useState('Basstäd');
     const [pay, setPay] = useState("Faktura");
+    const [name, setName] = useState('');
+    const [adress, setAdress] = useState('');
     
 
     const createOrder = () => {
       const orderRef = firebase.database().ref('Order');
       const order = {
+        name,
         product, 
         pay,
+        adress,
       };
       orderRef.push(order);
     };
@@ -49,6 +53,21 @@ const App = () => {
             Betalningsmetod: {pay}
           </Text>
         </View>
+        <TextInput
+          placeholder="Name"
+          value={name}
+          onChangeText={text => setName(text)}
+          style={styles.input}
+          >
+        </TextInput>
+        <TextInput
+          placeholder="Adress"
+          value={adress}
+          onChangeText={text => setAdress(text)}
+          style={styles.input}
+          >
+        </TextInput>
+
         <Pressable style={styles.orderButton}
           onPress={createOrder}
           title="Köp"
@@ -108,7 +127,14 @@ const App = () => {
         textAlign: 'center',
         padding: 4,
         margin: 4,
-      }
+      },
+      input: {
+        backgroundColor: 'white',
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderRadius: 10,
+        marginTop: 5,
+    },
   });
   
   export default App;
