@@ -22,4 +22,7 @@ Nothing to be taken serously! Just a simple test to create an app for a fictive 
 - [x] Log new bookings in database
 - [x] Make an "Min sida" component
 - [x] Set name to order
-- [x] Set adress to order 
+- [x] Set adress to order
+- [ ] Fix the "Min Sida" navigation 
+- [ ] Store sign-in email globally so that it auto fills as name when orderring
+- [ ] (Maybe) Stay logged in?
