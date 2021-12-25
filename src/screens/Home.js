@@ -1,20 +1,14 @@
 import React from 'react';
-import {Image, StyleSheet, View, Text} from 'react-native';
-import backgroundImage from '../img/jan-kopriva-77La8Of1F9g-unsplash.jpg'
+import { StyleSheet, View, Text} from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBroom } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
     
-
     return (
       <View style={styles.component}>
-        <Text style={styles.title} >STÄDA FINT</Text>
-            
-              
+        <Text style={styles.title} >STÄDA FINT</Text>    
              <FontAwesomeIcon icon={faBroom} size={250} color={'whitesmoke'}/>
-         
-
       </View>
     );
   };

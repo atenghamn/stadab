@@ -18,7 +18,8 @@ const LoginScreen = () => {
     useEffect(() => {
        const unsubscribe = auth.onAuthStateChanged(user => {
             if(user) {
-                navigation.replace(MyPage)
+                console.log("Should change screen");
+                navigation.replace(MyPage);
             }
         })
         return unsubscribe
@@ -85,10 +86,6 @@ const LoginScreen = () => {
 
                 </TouchableOpacity>
             </View>
-            
-            
-
-
         </KeyboardAvoidingView>
     )};
 

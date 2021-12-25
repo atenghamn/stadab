@@ -55,6 +55,4 @@ web-build/
 dist/
 
 # Root
-
-/firebase.js
 firebase.js
