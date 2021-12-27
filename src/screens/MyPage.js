@@ -1,6 +1,6 @@
 import { NavigationContainer, useNavigation } from '@react-navigation/core';
 import React from 'react';
-import {Text, StyleSheet, View, TextInput, Pressable } from 'react-native';
+import {Text, StyleSheet, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { auth } from '../../firebase';
 
@@ -20,7 +20,8 @@ const MyPage = () => {
    
     return (
       <View style={styles.component}>
-        <Text>Inloggad som {auth.currentUser?.email}</Text>
+        <Text style={styles.mpTitle}>Mina Sidor</Text>
+        <Text style={styles.mpName}>Inloggad som {auth.currentUser?.email}</Text>
         <TouchableOpacity
         onPress={handleSignOut}
         style={styles.button}
@@ -39,15 +40,18 @@ const MyPage = () => {
       alignItems: 'center',
       backgroundColor: '#82C7C1', 
     },
-    loginTitle: {
+    mpTitle: {
       marginTop: 60,
-        marginBottom: 30,
-        padding: 8,   
-        backgroundColor: "#000000c0",
-        color: "whitesmoke",
-        textAlign: "center",
-        fontSize: 30,
-        fontWeight: "bold",
+      marginBottom: 30,
+      padding: 8,   
+      backgroundColor: "#000000c0",
+      color: "whitesmoke",
+      textAlign: "center",
+      fontSize: 30,
+      fontWeight: "bold",
+      borderRadius: 10,
+      borderColor: '#FAAF3C',
+      borderWidth: 2,
     },
     buttonText: {
         color: 'whitesmoke',
@@ -62,6 +66,12 @@ const MyPage = () => {
         padding: 15,
         borderRadius: 10,
         alignItems: 'center',
+    },
+
+    mpName: {
+      color:"whitesmoke",
+      margin: 30,
+      fontSize: 16,
     },
     
   });

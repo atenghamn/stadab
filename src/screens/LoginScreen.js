@@ -1,4 +1,4 @@
-import { NavigationContainer, useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 import React, { useEffect, useState } from 'react';
 import {KeyboardAvoidingView, StyleSheet, View, Text} from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
@@ -19,7 +19,7 @@ const LoginScreen = () => {
        const unsubscribe = auth.onAuthStateChanged(user => {
             if(user) {
                 console.log("Should change screen");
-                navigation.replace(MyPage);
+               // navigation.navigate(MyPage); 
             }
         })
         return unsubscribe
@@ -36,8 +36,8 @@ const LoginScreen = () => {
         
     }
 
-    const handleLogin = () => {
-        auth
+     const handleLogin = () => {
+       auth
         .signInWithEmailAndPassword(email, password)
         .then(userCredentials => {
             const user = userCredentials.user;
@@ -45,12 +45,12 @@ const LoginScreen = () => {
         })
         .catch(error => alert(error.message))
     }
-
+ 
 
     return (
         <KeyboardAvoidingView style={styles.component}
-        behavior='padding'>
-
+        behavior='padding'>            
+            <Text style={styles.loginTitle}>Logga in</Text>
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder="Email"
@@ -144,6 +144,20 @@ const LoginScreen = () => {
             color: '#FAAF3C',
             fontWeight: '700',
             fontSize: 16,
+        },
+
+        loginTitle: {
+            marginTop: 60,
+            marginBottom: 30,
+            padding: 8,   
+            backgroundColor: "#000000c0",
+            color: "whitesmoke",
+            textAlign: "center",
+            fontSize: 30,
+            fontWeight: "bold",
+            borderRadius: 10,
+            borderColor: '#FAAF3C',
+            borderWidth: 2,
         },
         
        
