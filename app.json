@@ -3,7 +3,7 @@
     "name": "StadABApp",
     "slug": "StadABApp",
     "version": "1.0.0",
-    "icon" : "src/img/adaptive-icon.png",
+    "icon" : "src/img/icon.png",
     "assetBundlePatterns": [
       "**/*"
     ]

@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import {Text, StyleSheet, View, TextInput, Button, Pressable } from 'react-native';
+import React, {useState, useContext} from 'react';
+import {Text, StyleSheet, View, TextInput, Pressable } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { getDatabase, ref, set } from "firebase/database";
 import firebase from 'firebase';
-
+import { EmailContext } from '../context/EmailContext';
 
 
 
@@ -12,7 +11,7 @@ const App = () => {
     const [pay, setPay] = useState("Faktura");
     const [name, setName] = useState('');
     const [adress, setAdress] = useState('');
-    
+    const { email, changeEmail } = useContext(EmailContext);
 
     const createOrder = () => {
       const orderRef = firebase.database().ref('Order');
@@ -21,6 +20,7 @@ const App = () => {
         product, 
         pay,
         adress,
+        email,
       };
       orderRef.push(order);
     };

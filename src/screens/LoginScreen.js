@@ -1,9 +1,11 @@
 import { useNavigation } from '@react-navigation/core';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import {KeyboardAvoidingView, StyleSheet, View, Text} from 'react-native';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { auth } from '../../firebase';
 import MyPage from "./MyPage";
+import { EmailContext } from '../context/EmailContext';
+
 
 
 
@@ -11,6 +13,8 @@ const LoginScreen = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { globalEmail, changeEmail } = useContext(EmailContext);
+
 
     const navigation = useNavigation();
 
@@ -30,7 +34,8 @@ const LoginScreen = () => {
         .createUserWithEmailAndPassword(email, password)
         .then(userCredentials => {
             const user = userCredentials.user;
-            console.log("Registrerade: ", user.email)
+            changeEmail(email);
+            console.log("Registrerade: ", user.globalEmail)
         })
         .catch(error => alert(error.message))
         
@@ -38,10 +43,11 @@ const LoginScreen = () => {
 
      const handleLogin = () => {
        auth
-        .signInWithEmailAndPassword(email, password)
+       .signInWithEmailAndPassword(email, password)
         .then(userCredentials => {
             const user = userCredentials.user;
-            console.log("Loggade in med ", user.email);
+            changeEmail(email);
+            console.log("Loggade in med ", globalEmail);
         })
         .catch(error => alert(error.message))
     }

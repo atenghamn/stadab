@@ -9,6 +9,8 @@ import Home from './src/screens/Home';
 import LoginScreen from './src/screens/LoginScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MyPage from './src/screens/MyPage';
+import { EmailProvider } from './src/context/EmailContext';
+
 
 const Tab  = createBottomTabNavigator();
 
@@ -51,9 +53,12 @@ export const AppNavigator = () => (
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <AppNavigator />
-    </NavigationContainer>
+     <EmailProvider>
+      <NavigationContainer>
+        <AppNavigator />    
+      </NavigationContainer>
+     </EmailProvider>
+  
      
   );
 }
