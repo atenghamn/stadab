@@ -18,6 +18,6 @@
 - [x] Set adress to order
 - [x] Remove AsynStorage
 - [ ] Fix the "Min Sida" navigation 
-- [ ] Store sign-in email globally so that it auto fills as name when orderring
-- [ ] (Maybe) Stay logged in?
+- [x] Store sign-in email globally so that it auto fills as name when orderring
+- [x] (Maybe) Stay logged in?
 - [ ] App icon

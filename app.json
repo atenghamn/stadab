@@ -8,5 +8,12 @@
       "**/*"
     ]
   },
-  "name": "StadABApp"
+
+  "android": {
+    "adaptiveIcon": {
+      "foregroundImage": "src/img/adaptive-icon.png",
+      "backgroundColor": "#FFFFFF"
+    }
+    },
+    "name": "StadABApp"
 }
