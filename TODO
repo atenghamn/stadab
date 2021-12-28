@@ -20,4 +20,5 @@
 - [ ] Fix the "Min Sida" navigation 
 - [x] Store sign-in email globally so that it auto fills as name when orderring
 - [x] (Maybe) Stay logged in?
-- [ ] App icon
+- [x] App icon
+- [x] Splash Screen

@@ -4,6 +4,11 @@
     "slug": "StadABApp",
     "version": "1.0.0",
     "icon" : "src/img/icon.png",
+    "splash": {
+      "image": "src/img/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "assetBundlePatterns": [
       "**/*"
     ]
